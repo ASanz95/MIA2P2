@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://kit.fontawesome.com/22a4983a09.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="statics/css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!--Para leer $-->
+    <title>Consola</title>
+</head>
+
+<body onload="cargar()">
+    <!------------------------------------------ HEADER ----------------------------------------------->
+    <header>
+        <nav>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="http://localhost:8080/login">&nbsp;LOGIN</a></li>
+            </ul>
+            <ul>
+                <li class="submenu" id="traducir"><i class="fas fa-folder-open fa-lg"></i>
+                    <a href="#">&nbsp;Files</a>
+                    <ul class="children">
+                        <li><i class="fas fa-file-upload fa-lg"></i><a href="#">&nbsp; <label for="file-input">Upload
+                                    Main File---</label></a></li>
+                        <li><i class="fas fa-file-upload fa-lg"></i><a href="#"
+                                onclick="alert('Presionando')">&nbsp;Boton</label></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="#" onclick="iniciarEjecucion()">&nbsp;Ejecutar</a></li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="#" onclick="location.reload()">&nbsp;Nuevo Analisis</a>
+                </li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="http://localhost:8080/reportes">&nbsp;Reportes</a></li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="http://localhost:8080/inicio">&nbsp;Inicio</a></li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-stream  fa-lg"></i><a href="#" onclick="iniciarReinicio()">&nbsp;Reiniciar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="results" id="shadow">
+            <textarea id="txt_Principal"> // --- Cargue o Codifique su Archivo Principal</textarea>
+        </div>
+        <div class="editor" id="editor">
+            <textarea id="txt_editor" placeholder=""> // --- Resultados</textarea>
+        </div>
+        <textarea id="resultado" placeholder=""></textarea>
+       
+    </div>
+
+    <input style="color:white" type="file" id="file-input" />
+    
+</body>
+
+<script>
+    function cargar() {
+    }
+
+    function iniciarEjecucion() {
+        ejecutar(document.getElementById("txt_Principal").value)
+    }
+
+    function iniciarReinicio() {
+        reiniciar()
+    }
+
+    /**--------------------------------------MENU DESPLEGABLE--------------------------------------**/
+    $('.submenu').click(function () {
+        $(this).children('.children').slideToggle();
+    });
+    /**--------------------------------------------------------------------------------------------**/
+</script>
+
+<script src="statics/js/jquery.js"></script>
+<script src="statics/js/indexConnection.js"></script>
+<script src="statics/js/uploadFile.js"></script>
+
+</html>

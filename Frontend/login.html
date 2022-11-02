@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Login Form | CodingLab</title> -->
+  <link rel="stylesheet" href="statics/css/styleLogin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <!--Para leer $-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Login</span></div>
+      <form action="#">
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="text" id="partition" placeholder="ID Particion" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="text" id="user" placeholder="User" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <div class="row button" onclick="iniciarLogin()">
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link"><a href="http://localhost:8080/inicio">Inicio</a></div>
+        <div class="signup-link"><a href="#" onclick="location.reload()">Borrar</a></div>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+
+<script>
+
+  function iniciarLogin() {
+    login(document.getElementById('partition').value + "," + document.getElementById('user').value + "," + document.getElementById('password').value + ",")
+  }
+
+</script>
+
+<script src="statics/js/indexConnection.js"></script>
+
+</html>
